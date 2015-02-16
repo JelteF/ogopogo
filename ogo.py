@@ -264,7 +264,8 @@ def draw(config):
     """
 
     import networkx as nx
-    import matplotlib.pyplot as plt
+    import matplotlib as mpl 
+    mpl.use('Agg') 
 
     G = nx.Graph()
 
@@ -297,8 +298,8 @@ def draw(config):
 
     nx.draw_networkx_edges(G, pos, alpha=0.5, width=3)
     nx.draw_networkx_labels(G, pos, font_size=8)
-    plt.axis('off')
-    plt.savefig(sys.argv[2] + ".png")
+    mpl.pyplot.axis('off')
+    mpl.pyplot.savefig(sys.argv[2] + ".png")
 
 def test(config):
     broken = False
